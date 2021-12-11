@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
 
