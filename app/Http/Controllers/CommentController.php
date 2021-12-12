@@ -14,7 +14,7 @@ class CommentController extends Controller
         $validated = $request->validate([
             'user_name' => 'required',
             'text' => 'required',
-            'level' => 'required'
+            'level' => 'required|numeric|min:1|max:3'
         ]);
 
         $validated['reply_id'] = $request->reply_id;
